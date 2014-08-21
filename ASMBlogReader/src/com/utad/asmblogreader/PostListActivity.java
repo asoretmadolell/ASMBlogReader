@@ -9,8 +9,23 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/*************************************************************/
+/*                                                           */ 
+/* PostListActivity                                          */ 
+/* (c)2014 Alejandro                                         */ 
+/*                                                           */ 
+/* Description: PostListActivity Class                       */ 
+/*              ASMBlogReader Project                        */ 
+/*                                                           */ 
+/*                                                           */ 
+/*************************************************************/
 public class PostListActivity extends CommonActivity
 {
+	/*********************************************************/
+	/*                                                       */ 
+	/* PostListActivity.onCreate()                           */ 
+	/*                                                       */ 
+	/*********************************************************/
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -34,21 +49,35 @@ public class PostListActivity extends CommonActivity
 		});
 	}
 	
+	/*********************************************************/
+	/*                                                       */ 
+	/* PostListActivity.onCreateOptionsMenu()                */ 
+	/*                                                       */ 
+	/*********************************************************/
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
 
+    /*********************************************************/
+    /*                                                       */ 
+    /* PostListActivity.onOptionsItemSelected()              */ 
+    /*                                                       */ 
+    /*********************************************************/
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (item.getItemId() == android.R.id.home)
+        {
             finish();
             return true;
         }
-        else {
+        else
+        {
             return super.onOptionsItemSelected(item);
         }
     }

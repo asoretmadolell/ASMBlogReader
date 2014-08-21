@@ -9,6 +9,16 @@ import android.widget.TextView;
 
 import com.utad.asmblogreader.model.PostList;
 
+/*************************************************************/
+/*                                                           */ 
+/* PostListAdapter                                           */ 
+/* (c)2014 Alejandro                                         */ 
+/*                                                           */ 
+/* Description: PostListAdapter Class                        */ 
+/*              ASMBlogReader Project                        */ 
+/*                                                           */ 
+/*                                                           */ 
+/*************************************************************/
 public class PostListAdapter extends BaseAdapter 
 {
 	private Context ctx;

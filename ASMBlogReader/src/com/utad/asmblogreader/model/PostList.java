@@ -5,6 +5,16 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.TreeMap;
 
+/*************************************************************/
+/*                                                           */ 
+/* PostList                                                  */ 
+/* (c)2014 Alejandro                                         */ 
+/*                                                           */ 
+/* Description: PostList Class                               */ 
+/*              ASMBlogReader Project                        */ 
+/*                                                           */ 
+/*                                                           */ 
+/*************************************************************/
 public class PostList
 {
 	private ArrayList<Post> posts;

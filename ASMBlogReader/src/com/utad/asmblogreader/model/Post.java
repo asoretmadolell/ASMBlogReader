@@ -2,6 +2,16 @@ package com.utad.asmblogreader.model;
 
 import java.util.Date;
 
+/*************************************************************/
+/*                                                           */ 
+/* Post                                                      */ 
+/* (c)2014 Alejandro                                         */ 
+/*                                                           */ 
+/* Description: Post Class                                   */ 
+/*              ASMBlogReader Project                        */ 
+/*                                                           */ 
+/*                                                           */ 
+/*************************************************************/
 public class Post
 {
 	private long id;
