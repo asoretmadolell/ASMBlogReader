@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+E:\Documentos\Trabajos de clase\Máster en Programación de Apps para Smartphones y Tablets\Trabajos\ASMBlogReader\.metadata\.plugins\org.eclipse.jdt.core
+736419480.index
+3660471252.index
+1284074322.index
+3436539210.index
