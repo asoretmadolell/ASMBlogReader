@@ -17,6 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/thumbnail"
-        android:text="@string/hello_world" />
+        android:text="@string/IDS_HELLO_WORLD" />
 
 </RelativeLayout>

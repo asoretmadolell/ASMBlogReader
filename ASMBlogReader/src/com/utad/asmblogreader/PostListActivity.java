@@ -1,13 +1,15 @@
 package com.utad.asmblogreader;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.utad.asmblogreader.model.PostList;
 
 /*************************************************************/
 /*                                                           */ 
@@ -19,8 +21,11 @@ import android.widget.Toast;
 /*                                                           */ 
 /*                                                           */ 
 /*************************************************************/
-public class PostListActivity extends CommonActivity
+public class PostListActivity extends CommonActivity implements OnItemClickListener
 {
+	private ListView list;
+	private PostList postList;
+	
 	/*********************************************************/
 	/*                                                       */ 
 	/* PostListActivity.onCreate()                           */ 
@@ -32,21 +37,32 @@ public class PostListActivity extends CommonActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_post_list);
 		
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		// Obtain Post listing
+		this.postList = PostList.getInstance();
 		
 		// Assign the adapter of the list
-		ListView list = (ListView) findViewById(R.id.postList);
-		list.setAdapter(new PostListAdapter(this));
+		list = (ListView) findViewById(R.id.postList);
+		list.setAdapter( new PostListAdapter( this, this.postList ) );
 		
 		// When clicking on a list element
-		list.setOnItemClickListener(new OnItemClickListener()
-		{
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-			{
-				Toast.makeText(PostListActivity.this, "Id: " + id, Toast.LENGTH_SHORT).show();
-			}
-		});
+		list.setOnItemClickListener( this );
+	}
+
+	/*********************************************************/
+	/*                                                       */ 
+	/* PostListActivity.onItemClick()                        */ 
+	/*                                                       */ 
+	/*********************************************************/
+	@Override
+	public void onItemClick( AdapterView< ? > parent, View view, int position, long id )
+	{
+		if( (ListView) parent == list )
+          {
+			Toast.makeText(PostListActivity.this, "Id: " + id, Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent( PostListActivity.this, PostActivity.class );
+			intent.putExtra( ASMApplication.IDRC_POST_ID, id );
+			startActivity( intent );
+          }
 	}
 	
 	/*********************************************************/
@@ -61,25 +77,4 @@ public class PostListActivity extends CommonActivity
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
-
-    /*********************************************************/
-    /*                                                       */ 
-    /* PostListActivity.onOptionsItemSelected()              */ 
-    /*                                                       */ 
-    /*********************************************************/
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        if (item.getItemId() == android.R.id.home)
-        {
-            finish();
-            return true;
-        }
-        else
-        {
-            return super.onOptionsItemSelected(item);
-        }
-    }
-
 }

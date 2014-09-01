@@ -24,9 +24,9 @@ public class PostListAdapter extends BaseAdapter
 	private Context ctx;
 	private PostList postList;
 	
-	public PostListAdapter(Context context)
+	public PostListAdapter( Context context, PostList postList )
 	{
-		this.postList = PostList.generateDummyContents();
+		this.postList = postList;
 		this.ctx = context;
 	}
 	

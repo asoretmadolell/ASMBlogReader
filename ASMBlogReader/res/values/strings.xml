@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">ASMBlogReader</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
+    <string name="IDS_APP_NAME">ASMBlogReader</string>
+    <string name="IDS_HELLO_WORLD">Hello world!</string>
+    <string name="IDS_ACTION_SETTINGS">Settings</string>
+    <string name="IDS_NO_POST_FOUND">The post could not be found.</string>
 </resources>
