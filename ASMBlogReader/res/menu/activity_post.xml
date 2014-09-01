@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/IDM_ACTION_SHARE"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/IDS_ACTION_SHARE"/>
+    
+    <item
+        android:id="@+id/IDM_ACTION_FAVORITE"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/IDS_ACTION_FAVORITE"/>
+    
+    <item
+        android:id="@+id/IDM_ACTION_SETTINGS"
+        android:showAsAction="never"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/IDS_ACTION_SETTINGS"/>
+
+</menu>

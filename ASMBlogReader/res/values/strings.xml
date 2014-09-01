@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="IDS_APP_NAME">ASMBlogReader</string>
-    <string name="IDS_HELLO_WORLD">Hello world!</string>
+    <string name="IDS_ACTION_SHARE">Share</string>
+    <string name="IDS_ACTION_FAVORITE">Favorite</string>
     <string name="IDS_ACTION_SETTINGS">Settings</string>
+    
+    <string name="IDS_ACCEPT">Accept</string>
+    <string name="IDS_CANCEL">Cancel</string>
+    
+    <string name="IDS_ADD_TO_FAVORITES_QUESTION">¿Are you sure you want to add &lt;b&gt;%1$s&lt;/b&gt; to favorites?</string>
     <string name="IDS_NO_POST_FOUND">The post could not be found.</string>
 </resources>

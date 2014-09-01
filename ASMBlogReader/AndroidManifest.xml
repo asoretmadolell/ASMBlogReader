@@ -29,6 +29,9 @@
         
         <activity android:name="com.utad.asmblogreader.PostActivity"></activity>
         
+        <activity android:name="com.utad.asmblogreader.AskConfirmationActivity"
+            android:theme="@android:style/Theme.Holo.Dialog"></activity>
+        
     </application>
 
 </manifest>

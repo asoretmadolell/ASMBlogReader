@@ -15,16 +15,22 @@ import java.util.Date;
 public class Post
 {
 	private long id;
+	private String url;
 	private String title;
 	private Date date;
 	private String picUrl;
 	private String body;
 
-	// Generated constructor using fields
-	public Post(long id, String title, Date date, String picUrl, String body)
+	/*********************************************************/
+	/*                                                       */ 
+	/* Post.Post()                                           */ 
+	/*                                                       */ 
+	/*********************************************************/
+	public Post(long id, String url, String title, Date date, String picUrl, String body)
 	{
 		super();
 		this.id = id;
+		this.url = url;
 		this.title = title;
 		this.date = date;
 		this.picUrl = picUrl;
@@ -35,6 +41,9 @@ public class Post
 	// Generated getters
 	public long getId() {
 		return id;
+	}
+	public String getUrl() {
+		return url;
 	}
 	public String getTitle() {
 		return title;

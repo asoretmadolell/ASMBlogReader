@@ -24,7 +24,8 @@ import com.utad.asmblogreader.model.PostList;
 public class PostListActivity extends CommonActivity implements OnItemClickListener
 {
 	private ListView list;
-	private PostList postList;
+	private PostList mPostList;
+	private PostListAdapter mAdapter;
 	
 	/*********************************************************/
 	/*                                                       */ 
@@ -38,11 +39,12 @@ public class PostListActivity extends CommonActivity implements OnItemClickListe
 		setContentView(R.layout.activity_post_list);
 		
 		// Obtain Post listing
-		this.postList = PostList.getInstance();
+		this.mPostList = PostList.getInstance();
 		
 		// Assign the adapter of the list
 		list = (ListView) findViewById(R.id.postList);
-		list.setAdapter( new PostListAdapter( this, this.postList ) );
+		mAdapter = ( new PostListAdapter( this, this.mPostList ) );
+		list.setAdapter( mAdapter );
 		
 		// When clicking on a list element
 		list.setOnItemClickListener( this );
@@ -64,17 +66,4 @@ public class PostListActivity extends CommonActivity implements OnItemClickListe
 			startActivity( intent );
           }
 	}
-	
-	/*********************************************************/
-	/*                                                       */ 
-	/* PostListActivity.onCreateOptionsMenu()                */ 
-	/*                                                       */ 
-	/*********************************************************/
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 }
