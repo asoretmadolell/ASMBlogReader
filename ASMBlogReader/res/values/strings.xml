@@ -8,6 +8,7 @@
     <string name="IDS_ACCEPT">Accept</string>
     <string name="IDS_CANCEL">Cancel</string>
     
+    <string name="IDS_ADD_TO_FAVORITES">Add to favorites</string>
     <string name="IDS_ADD_TO_FAVORITES_QUESTION">¿Are you sure you want to add &lt;b&gt;%1$s&lt;/b&gt; to favorites?</string>
     <string name="IDS_NO_POST_FOUND">The post could not be found.</string>
 </resources>

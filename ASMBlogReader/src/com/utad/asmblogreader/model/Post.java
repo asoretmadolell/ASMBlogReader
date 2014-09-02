@@ -2,6 +2,9 @@ package com.utad.asmblogreader.model;
 
 import java.util.Date;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /*************************************************************/
 /*                                                           */ 
 /* Post                                                      */ 
@@ -12,7 +15,7 @@ import java.util.Date;
 /*                                                           */ 
 /*                                                           */ 
 /*************************************************************/
-public class Post
+public class Post implements Parcelable
 {
 	private long id;
 	private String url;
@@ -20,6 +23,31 @@ public class Post
 	private Date date;
 	private String picUrl;
 	private String body;
+	
+	public static final Parcelable.Creator< Post > CREATOR = new Creator< Post >()
+	{
+		/*********************************************************/
+		/*                                                       */ 
+		/* Post.createFromParcel()                               */ 
+		/*                                                       */ 
+		/*********************************************************/
+		@Override
+          public Post createFromParcel( Parcel source )
+          {
+	          return new Post( source );
+          }
+
+		/*********************************************************/
+		/*                                                       */ 
+		/* Post.newArray()                                       */ 
+		/*                                                       */ 
+		/*********************************************************/
+		@Override
+          public Post[] newArray( int size )
+          {
+	          return new Post[ size ];
+          }
+	};
 
 	/*********************************************************/
 	/*                                                       */ 
@@ -28,7 +56,6 @@ public class Post
 	/*********************************************************/
 	public Post(long id, String url, String title, Date date, String picUrl, String body)
 	{
-		super();
 		this.id = id;
 		this.url = url;
 		this.title = title;
@@ -37,8 +64,54 @@ public class Post
 		this.body = body;
 	}
 	
-	
-	// Generated getters
+	/*********************************************************/
+	/*                                                       */ 
+	/* Post.Post()                                           */ 
+	/*                                                       */ 
+	/*********************************************************/
+	public Post( Parcel source )
+	{
+		this.id = source.readLong();
+		this.url = source.readString();
+		this.title = source.readString();
+		long dateMillis = source.readLong();
+		this.date = dateMillis == 0 ? null: new Date( dateMillis );
+		this.picUrl = source.readString();
+		this.body = source.readString();
+	}
+
+	/*********************************************************/
+	/*                                                       */ 
+	/* Post.describeContents()                               */ 
+	/*                                                       */ 
+	/*********************************************************/
+	@Override
+     public int describeContents()
+     {
+	     return 0;
+     }
+
+	/*********************************************************/
+	/*                                                       */ 
+	/* Post.writeToParcel()                                  */ 
+	/*                                                       */ 
+	/*********************************************************/
+	@Override
+     public void writeToParcel( Parcel dest, int flags )
+     {
+		dest.writeLong( id );
+		dest.writeString( url );
+		dest.writeString( title );
+		dest.writeLong( date == null ? null : date.getTime() );
+		dest.writeString( picUrl );
+		dest.writeString( body );
+     }
+
+	/*********************************************************/
+	/*                                                       */ 
+	/* Post.getters                                          */ 
+	/*                                                       */ 
+	/*********************************************************/
 	public long getId() {
 		return id;
 	}
